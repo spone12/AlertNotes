@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace AlertNotes;
+namespace AlertNotes.Views;
 
 public partial class MainWindow : Window
 {
