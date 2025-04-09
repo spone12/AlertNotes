@@ -22,15 +22,23 @@
   
     <Grid Background="Transparent"
           ColumnDefinitions="Auto, *">
-        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}" Width="{Binding MenuWidth}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="8">
-                    <Image Source="{SvgImage /Assets/Images/Menu/Logo.svg}" Width="200"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/Menu/Logo.svg}" Width="200" IsVisible="{Binding SideMenuExpanded}"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/Menu/Icon.svg}" Width="20" IsVisible="{Binding !SideMenuExpanded}"></Image>
+                    
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xe2c4;"></Label>
+                            <Label Content="Home" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
                     
                     <Button HorizontalAlignment="Stretch">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe348;"></Label>
-                            <Label Content="Notes"></Label>
+                            <Label Content="Notes" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
                     

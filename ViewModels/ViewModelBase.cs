@@ -4,4 +4,5 @@ namespace AlertNotes.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {
+    
 }
